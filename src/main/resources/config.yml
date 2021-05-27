@@ -1,0 +1,304 @@
+# Configuration file for RaptorChat
+
+# A mapping of name color -> permission values for /namecolor
+# use 'true' to allow the name color for any permission, 
+# 'false' to disallow it for everyone except operators.
+# The default is 'true' for all name colors.
+# Valid name colors are: black, dark_blue, dark_green, dark_aqua, 
+# dark_red, dark_purple, gold, gray, dark_gray, blue, green, aqua,
+# red, light_purple, yellow, and white.
+# Hex colors are also supported - you need to wrap the #xxxxxx value in quotes like so: '#xxxxxx'.
+# Use the special key 'default' to specify a default value.
+NameColorPermissions:
+  default: true
+   
+# A regular expression which all nicknames must match entirely.
+NicknamePattern: '[\p{Graph}&&[^\s]]+'
+
+# If set to true, two players may have the same name/nickname.
+AllowDuplicateNicknames: false
+
+# The chat format file name. The file contains JSON which replaces Minecraft's default chat format, and is
+# in JSON text component format (see https://minecraft.fandom.com/wiki/Raw_JSON_text_format).
+# Use the placeholder ${player} to represent the player's name and 
+# the placeholder ${message} to represent their chat message.
+ChatFormatFile: chat_format.json
+
+# Whether the chat format is altered at all.
+ChatFormatEnabled: true
+
+# This is a list of chat replacements.
+# Each entry in this list has some properties.
+# 'Match' is a regular expression which will be matched
+# against a given chat message. It is required.
+# 'Replacement' is what to replace the pattern with. It is optional. You can
+# use $0, $1, $2, etc. within the replacement to match against capturing groups.
+# 'Style' is a subsection describing the chat style of the matched area:
+#    'Color' is a valid color name/hex code describing the color to change.
+#    'Bold' is either true or false.
+#    'Italic' is either true or false.
+#    'Strikethru' is either true or false.
+#    'Obfuscated' is either true or false.
+#    'Underline' is either true or false.
+ChatReplacements:
+- Match: '<3|:(red_)?heart:'
+  Replacement: '❤'
+  Style:
+    Color: red
+- Match: ':blue_heart:'
+  Replacement: '❤'
+  Style:
+    Color: blue
+- Match: ':purple_heart:'
+  Replacement: '❤'
+  Style:
+    Color: dark_purple
+- Match: ':green_heart:'
+  Replacement: '❤'
+  Style:
+    Color: green
+- Match: ':pink_heart:'
+  Replacement: '❤'
+  Style:
+    Color: light_purple
+- Match: ':yellow_heart:'
+  Replacement: '❤'
+  Style:
+    Color: yellow
+- Match: ':white_heart:'
+  Replacement: '❤'
+  Style:
+    Color: white
+- Match: ':star:'
+  Replacement: '⭐'
+  Style:
+    Color: gold
+- Match: ':inverted_cross:'
+  Replacement: "\u2E38"
+- Match: ':cross:'
+  Replacement: '†'
+- Match: ':skull:'
+  Replacement: '☠'
+- Match: ':crossed_swords:'
+  Replacement: '⚔'
+  Style:
+    Color: gray
+- Match: ':cube:'
+  Replacement: '⧈'
+- Match: '\([Cc]\)|:copyright:'
+  Replacement: '©'
+- Match: '\([Rr]\)|:registered:'
+  Replacement: '®'
+- Match: '\([Tt][Mm]\)|:t(m|rademark):'
+  Replacement: '™'
+- Match: ':infinity:'
+  Replacement: '∞'
+- Match: ':sun:'
+  Replacement: '☀'
+  Style:
+    Color: yellow
+- Match: ':cloud:'
+  Replacement: '☁'
+- Match: ':moon:'
+  Replacement: '☽'
+- Match: ':blue_moon:'
+  Replacement: '☽'
+  Style:
+    Color: aqua
+- Match: ':male:'
+  Replacement: '♂'
+- Match: ':female:'
+  Replacement: '♀'
+- Match: ':male_and_female:'
+  Replacement: '⚥'
+- Match: ':snowflake:'
+  Replacement: '❄'
+- Match: ':umbrella:'
+  Replacement: '☂'
+- Match: ':rainy_umbrella:'
+  Replacement: '☔'
+- Match: ':happy_face:'
+  Replacement: '☺'
+- Match: ':happy_face_?2:'
+  Replacement: '☻'
+- Match: ':(frowny|sad)_face:'
+  Replacement: '☹'
+- Match: '\b2/3\b'
+  Replacement: '⅔'
+- Match: '\b1/4\b'
+  Replacement: '¼'
+- Match: '\b1/2\b'
+  Replacement: '½'
+- Match: '\b3/4\b'
+  Replacement: '¾'
+- Match: '\b1/10\b'
+  Replacement: '⅒'
+- Match: '\b4/5\b'
+  Replacement: '⅘'
+- Match: ':dot:'
+  Replacement: '•'
+- Match: ':power_symbol:'
+  Replacement: '⏻'
+- Match: ':pencil:'
+  Replacement: '✎'
+- Match: ':hourglass:'
+  Replacement: '⌛'
+- Match: ':clock:'
+  Replacement: '⌚'
+- Match: ':snowman:'
+  Replacement: '⛄'
+- Match: ':snowing_snowman:'
+  Replacement: '☃'
+- Match: ':anchor:'
+  Replacement: '⚓'
+  Style:
+    Color: gray
+- Match: ':thunder(_?(cloud|storm)):'
+  Replacement: '⛈'
+  Style:
+    Color: gray
+- Match: ':yin_yang:'
+  Replacement: '☯'
+- Match: ':fire:'
+  Replacement: '🔥'
+  Style:
+    Color: yellow
+- Match: ':soul_fire:'
+  Replacement: '🔥'
+  Style:
+    Color: aqua
+- Match: ':(water(_wave)?|wave):'
+  Replacement: '🌊'
+  Style:
+    Color: aqua
+- Match: ':(knife|dagger|(stone_)?sword):'
+  Replacement: '🗡'
+  Style:
+    Color: gray
+- Match: ':gold(en)?_sword:'
+  Replacement: '🗡'
+  Style:
+    Color: yellow
+- Match: ':iron_sword:'
+  Replacement: '🗡'
+  Style:
+    Color: white
+- Match: ':diamond_sword:'
+  Replacement: '🗡'
+  Style:
+    Color: aqua
+- Match: ':netherite_sword:'
+  Replacement: '🗡'
+  Style:
+    Color: dark_gray
+- Match: ':wood(en)?_sword:'
+  Replacement: '🗡'
+  Style:
+    Color: '#806517'
+- Match: ':bow(_and_arrow)?:'
+  Replacement: '🏹'
+  Style:
+    Color: '#806517'
+- Match: ':(stone_)?axe:'
+  Replacement: '🪓'
+  Style:
+    Color: gray
+- Match: ':iron_axe:'
+  Replacement: '🪓'
+  Style:
+    Color: white
+- Match: ':gold(en)?_axe:'
+  Replacement: '🪓'
+  Style:
+    Color: yellow
+- Match: ':diamond_axe:'
+  Replacement: '🪓'
+  Style:
+    Color: aqua
+- Match: ':netherite_axe:'
+  Replacement: '🪓'
+  Style:
+    Color: dark_gray
+- Match: ':wood(en)?_axe:'
+  Replacement: '🪓'
+  Style:
+    Color: '#806517'
+- Match: ':trident:'
+  Replacement: '🔱'
+  Style:
+    Color: dark_aqua
+- Match: ':fishing_(rod|pole):'
+  Replacement: '🎣'
+  Style:
+    Color: '#806517'
+- Match: ':potion:'
+  Replacement: '🧪'
+  Style:
+    Color: white
+- Match: ':lightning(_bolt)?:'
+  Replacement: '⚡'
+  Style:
+    Color: yellow
+- Match: ':(stone_)?pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: gray
+- Match: ':iron_pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: white
+- Match: ':gold(en)?_pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: yellow
+- Match: ':diamond_pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: aqua
+- Match: ':netherite_pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: dark_gray
+- Match: ':wood(en)?_pickaxe:'
+  Replacement: '⛏'
+  Style:
+    Color: '#806517'
+- Match: ':(white_)?check(_?mark)?:'
+  Replacement: '✔'
+- Match: ':green_check(_?mark)?:'
+  Replacement: '✔'
+  Style:
+    Color: green
+- Match: ':red_x:'
+  Replacement: '❌'
+  Style:
+    Color: red
+- 
+    
+# Kaomoji/Emoticons
+
+- Match: ':shrug:'
+  Replacement: '¯\\_(ツ)_/¯'
+  
+# Text formatting
+- Match: '__(((?!__|$).)+)__'
+  Replacement: '$1'
+  Style:
+    Underline: true
+- Match: '~~(((?!~~|$).)+)~~'
+  Replacement: '$1'
+  Style:
+    Strikethru: true
+- Match: '\*\*\*(((?!\*\*\*|$).)+)\*\*\*'
+  Replacement: '$1'
+  Style:
+    Bold: true
+    Italic: true
+- Match: '\*\*(((?!\*\*|$).)+)\*\*'
+  Replacement: '$1'
+  Style:
+    Bold: true
+- Match: '\*(((?!\*|$).)+)\*'
+  Replacement: '$1'
+  Style:
+    Italic: true
